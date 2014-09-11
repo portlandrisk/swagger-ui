@@ -1,6 +1,12 @@
 <div class='heading'>
   <h2>
-    <a href='#!/{{id}}' onclick="Docs.toggleEndpointListForResource('{{id}}');">{{name}}</a> {{#description}} : {{/description}}{{{description}}}
+    <a href='#!/{{id}}' onclick="Docs.toggleEndpointListForResource('{{id}}');">
+        {{#if description}}
+           {{#description}} {{/description}}{{{description}}}
+        {{else}}
+           {{name}}
+        {{/if}}
+    </a>
   </h2>
   <ul class='options'>
     <li>

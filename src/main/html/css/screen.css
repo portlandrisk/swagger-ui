@@ -270,9 +270,11 @@
   cursor: pointer;
 }
 .swagger-section .swagger-ui-wrap .info_title {
-  padding-bottom: 10px;
-  font-weight: bold;
+  font-weight: normal;
   font-size: 25px;
+  background: #35BBEC;
+  color: whitesmoke;
+  padding: 20px 20px 10px 20px;
 }
 .swagger-section .swagger-ui-wrap p.big,
 .swagger-section .swagger-ui-wrap div.big p {
@@ -295,11 +297,15 @@
   color: #cc0000;
 }
 .swagger-section .swagger-ui-wrap .info_contact {
-  padding-bottom: 5px;
+  float: right;
+  padding: 10px;
 }
 .swagger-section .swagger-ui-wrap .info_description {
-  padding-bottom: 10px;
-  font-size: 15px;
+  font-size: 12px;
+  font-weight: normal;
+  background: #35BBEC;
+  color: whitesmoke;
+  padding: 10px 20px;
 }
 .swagger-section .swagger-ui-wrap .markdown ol li,
 .swagger-section .swagger-ui-wrap .markdown ul li {
@@ -1033,6 +1039,9 @@
 }
 .swagger-section .swagger-ui-wrap form.form_box p strong {
   color: black;
+}
+.swagger-section .swagger-ui-wrap #resources_container {
+  padding: 20px;
 }
 .swagger-section .title {
   font-style: bold;
