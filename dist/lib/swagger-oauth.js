@@ -7,7 +7,7 @@ var realm;
 function handleLogin() {
   var scopes = [];
 
-  if(window.swaggerUi.api.authSchemes 
+  if(window.swaggerUi.api.authSchemes
     && window.swaggerUi.api.authSchemes.oauth2
     && window.swaggerUi.api.authSchemes.oauth2.scopes) {
     scopes = window.swaggerUi.api.authSchemes.oauth2.scopes;
@@ -84,7 +84,13 @@ function handleLogin() {
         for(var t in o) {
           if(o.hasOwnProperty(t) && t === 'implicit') {
             var dets = o[t];
-            url = dets.loginEndpoint.url + "?response_type=token";
+            url = dets.loginEndpoint.url;
+            if (url.indexOf('?') > -1) {
+                url += "&";
+            } else {
+                url += "?";
+            }
+            url += "response_type=token";
             window.swaggerUi.tokenName = dets.tokenName;
           }
         }
@@ -199,7 +205,7 @@ function onOAuthComplete(token) {
               // all scopes are satisfied
               $(o).find('.api-ic').addClass('ic-info');
               $(o).find('.api-ic').removeClass('ic-warning');
-              $(o).find('.api-ic').removeClass('ic-error');          
+              $(o).find('.api-ic').removeClass('ic-error');
             }
           }
         });
